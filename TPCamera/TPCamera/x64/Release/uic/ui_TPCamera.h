@@ -36,6 +36,8 @@ public:
     QPushButton *zoomMoins;
     QPushButton *zoomPlus;
     QPushButton *zoomStop;
+    QPushButton *balayage;
+    QPushButton *reinitialiser;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -49,37 +51,43 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         log = new QListWidget(centralWidget);
         log->setObjectName(QString::fromUtf8("log"));
-        log->setGeometry(QRect(20, 10, 201, 111));
+        log->setGeometry(QRect(20, 10, 261, 111));
         bas = new QPushButton(centralWidget);
         bas->setObjectName(QString::fromUtf8("bas"));
-        bas->setGeometry(QRect(150, 250, 81, 41));
+        bas->setGeometry(QRect(260, 240, 81, 41));
         droite = new QPushButton(centralWidget);
         droite->setObjectName(QString::fromUtf8("droite"));
-        droite->setGeometry(QRect(230, 200, 61, 41));
+        droite->setGeometry(QRect(340, 190, 61, 41));
         gauche = new QPushButton(centralWidget);
         gauche->setObjectName(QString::fromUtf8("gauche"));
-        gauche->setGeometry(QRect(90, 200, 61, 41));
+        gauche->setGeometry(QRect(200, 190, 61, 41));
         haut = new QPushButton(centralWidget);
         haut->setObjectName(QString::fromUtf8("haut"));
-        haut->setGeometry(QRect(150, 150, 81, 41));
+        haut->setGeometry(QRect(260, 140, 81, 41));
         stop = new QPushButton(centralWidget);
         stop->setObjectName(QString::fromUtf8("stop"));
-        stop->setGeometry(QRect(160, 200, 61, 41));
+        stop->setGeometry(QRect(270, 190, 61, 41));
         allumer = new QPushButton(centralWidget);
         allumer->setObjectName(QString::fromUtf8("allumer"));
         allumer->setGeometry(QRect(510, 10, 81, 41));
         eteindre = new QPushButton(centralWidget);
         eteindre->setObjectName(QString::fromUtf8("eteindre"));
-        eteindre->setGeometry(QRect(510, 60, 81, 41));
+        eteindre->setGeometry(QRect(510, 80, 81, 41));
         zoomMoins = new QPushButton(centralWidget);
         zoomMoins->setObjectName(QString::fromUtf8("zoomMoins"));
-        zoomMoins->setGeometry(QRect(330, 250, 81, 41));
+        zoomMoins->setGeometry(QRect(20, 240, 81, 41));
         zoomPlus = new QPushButton(centralWidget);
         zoomPlus->setObjectName(QString::fromUtf8("zoomPlus"));
-        zoomPlus->setGeometry(QRect(330, 150, 81, 41));
+        zoomPlus->setGeometry(QRect(20, 140, 81, 41));
         zoomStop = new QPushButton(centralWidget);
         zoomStop->setObjectName(QString::fromUtf8("zoomStop"));
-        zoomStop->setGeometry(QRect(340, 200, 61, 41));
+        zoomStop->setGeometry(QRect(30, 190, 61, 41));
+        balayage = new QPushButton(centralWidget);
+        balayage->setObjectName(QString::fromUtf8("balayage"));
+        balayage->setGeometry(QRect(510, 190, 81, 41));
+        reinitialiser = new QPushButton(centralWidget);
+        reinitialiser->setObjectName(QString::fromUtf8("reinitialiser"));
+        reinitialiser->setGeometry(QRect(300, 40, 191, 41));
         TPCameraClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(TPCameraClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -103,6 +111,8 @@ public:
         QObject::connect(zoomPlus, SIGNAL(clicked(bool)), TPCameraClass, SLOT(buttonZoomPlus()));
         QObject::connect(zoomStop, SIGNAL(clicked(bool)), TPCameraClass, SLOT(buttonZoomStop()));
         QObject::connect(stop, SIGNAL(clicked(bool)), TPCameraClass, SLOT(buttonStop()));
+        QObject::connect(balayage, SIGNAL(clicked(bool)), TPCameraClass, SLOT(balayage()));
+        QObject::connect(reinitialiser, SIGNAL(clicked(bool)), TPCameraClass, SLOT(reinitialiser()));
 
         QMetaObject::connectSlotsByName(TPCameraClass);
     } // setupUi
@@ -120,6 +130,8 @@ public:
         zoomMoins->setText(QCoreApplication::translate("TPCameraClass", "Zoom -", nullptr));
         zoomPlus->setText(QCoreApplication::translate("TPCameraClass", "Zoom +", nullptr));
         zoomStop->setText(QCoreApplication::translate("TPCameraClass", "Stop", nullptr));
+        balayage->setText(QCoreApplication::translate("TPCameraClass", "Balayage", nullptr));
+        reinitialiser->setText(QCoreApplication::translate("TPCameraClass", "R\303\251initialiser la position de la cam\303\251ra ", nullptr));
     } // retranslateUi
 
 };

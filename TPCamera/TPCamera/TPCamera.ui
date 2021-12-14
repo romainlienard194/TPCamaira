@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>201</width>
+      <width>261</width>
       <height>111</height>
      </rect>
     </property>
@@ -27,8 +27,8 @@
    <widget class="QPushButton" name="bas">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>250</y>
+      <x>260</x>
+      <y>240</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -40,8 +40,8 @@
    <widget class="QPushButton" name="droite">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>200</y>
+      <x>340</x>
+      <y>190</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -53,8 +53,8 @@
    <widget class="QPushButton" name="gauche">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>200</y>
+      <x>200</x>
+      <y>190</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -66,8 +66,8 @@
    <widget class="QPushButton" name="haut">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>150</y>
+      <x>260</x>
+      <y>140</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -79,8 +79,8 @@
    <widget class="QPushButton" name="stop">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>200</y>
+      <x>270</x>
+      <y>190</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -106,7 +106,7 @@
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>60</y>
+      <y>80</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -118,8 +118,8 @@
    <widget class="QPushButton" name="zoomMoins">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>250</y>
+      <x>20</x>
+      <y>240</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -131,8 +131,8 @@
    <widget class="QPushButton" name="zoomPlus">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>150</y>
+      <x>20</x>
+      <y>140</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -144,14 +144,40 @@
    <widget class="QPushButton" name="zoomStop">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>200</y>
+      <x>30</x>
+      <y>190</y>
       <width>61</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="balayage">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>190</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Balayage</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reinitialiser">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>40</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Réinitialiser la position de la caméra </string>
     </property>
    </widget>
   </widget>
@@ -340,6 +366,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>balayage</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>TPCameraClass</receiver>
+   <slot>balayage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>537</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reinitialiser</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>TPCameraClass</receiver>
+   <slot>reinitialiser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>buttonAllumer()</slot>
@@ -352,5 +410,8 @@
   <slot>buttonZoomMoins()</slot>
   <slot>buttonZoomStop()</slot>
   <slot>buttonStop()</slot>
+  <slot>balayage()</slot>
+  <slot>slot2()</slot>
+  <slot>reinitialiser()</slot>
  </slots>
 </ui>

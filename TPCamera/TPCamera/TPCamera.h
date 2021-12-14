@@ -17,9 +17,7 @@
 
 #include <QSerialPort>
 #include <QSerialPortInfo>
-#include <qdebug>
 #include <QByteArray>
-#include <QTimer>
 
 class TPCamera : public QMainWindow
 {
@@ -37,19 +35,23 @@ public slots:
 
 	void EnvoieTrames(const QByteArray function);
 
+	// Etat de la caméra
 	void buttonAllumer();
 	void buttonEteindre();
 
+	// Position de la caméra
 	void buttonGauche();
 	void buttonDroite();
 	void buttonHaut();
 	void buttonBas();
 	void buttonStop();
 
+	// Zoom de la caméra
 	void buttonZoomPlus();
 	void buttonZoomMoins();
 	void buttonZoomStop();
-
-	void cameraOn();
-	void cameraOff();
+	
+	// Réinitialiser la position de la caméra
+	void balayage();
+	void reinitialiser();
 };

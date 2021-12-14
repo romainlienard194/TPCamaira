@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TPCamera_t {
     QByteArrayData data[16];
-    char stringdata0[184];
+    char stringdata0[188];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,15 +46,15 @@ QT_MOC_LITERAL(10, 108, 10), // "buttonStop"
 QT_MOC_LITERAL(11, 119, 14), // "buttonZoomPlus"
 QT_MOC_LITERAL(12, 134, 15), // "buttonZoomMoins"
 QT_MOC_LITERAL(13, 150, 14), // "buttonZoomStop"
-QT_MOC_LITERAL(14, 165, 8), // "cameraOn"
-QT_MOC_LITERAL(15, 174, 9) // "cameraOff"
+QT_MOC_LITERAL(14, 165, 8), // "balayage"
+QT_MOC_LITERAL(15, 174, 13) // "reinitialiser"
 
     },
     "TPCamera\0EnvoieTrames\0\0function\0"
     "buttonAllumer\0buttonEteindre\0buttonGauche\0"
     "buttonDroite\0buttonHaut\0buttonBas\0"
     "buttonStop\0buttonZoomPlus\0buttonZoomMoins\0"
-    "buttonZoomStop\0cameraOn\0cameraOff"
+    "buttonZoomStop\0balayage\0reinitialiser"
 };
 #undef QT_MOC_LITERAL
 
@@ -121,8 +121,8 @@ void TPCamera::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 8: _t->buttonZoomPlus(); break;
         case 9: _t->buttonZoomMoins(); break;
         case 10: _t->buttonZoomStop(); break;
-        case 11: _t->cameraOn(); break;
-        case 12: _t->cameraOff(); break;
+        case 11: _t->balayage(); break;
+        case 12: _t->reinitialiser(); break;
         default: ;
         }
     }

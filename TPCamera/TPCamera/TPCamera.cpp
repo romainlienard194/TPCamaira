@@ -39,71 +39,71 @@ void TPCamera::EnvoieTrames(const QByteArray data)
 void TPCamera::buttonAllumer()
 {
 	//Hexa pour allumer la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 04 00 02 FF");
+	QByteArray data = QByteArray::fromHex("81 01 04 00 02 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Camaira connectai");
+	ui.log->addItem("Camera connecte");
 }
 
 void TPCamera::buttonEteindre()
 {
 	//Hexa pour éteindre la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 04 00 03 FF");
+	QByteArray data = QByteArray::fromHex("81 01 04 00 03 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Camaira daiconnectai");
+	ui.log->addItem("Camera deconnecte");
 
 }
 
 void TPCamera::buttonGauche()
 {
 	//Hexa pour tourner à gauche la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 06 01 05 06 01 03 FF");
+	QByteArray data = QByteArray::fromHex("81 01 06 01 08 08 01 03 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Gauche gauche gauche");
+	ui.log->addItem("Gauche");
 
 }
 
 void TPCamera::buttonDroite()
 {
 	//Hexa pour tourner à droite la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 06 01 05 06 01 03 FF");
+	QByteArray data = QByteArray::fromHex("81 01 06 01 08 08 02 03 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Droite droite droite");
+	ui.log->addItem("Droite");
 
 }
 
 void TPCamera::buttonHaut()
 {
 	//Hexa pour regarder en haut la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 06 01 05 06 03 01 FF");
+	QByteArray data = QByteArray::fromHex("81 01 06 01 08 08 03 01 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("HAUT TOUJOURS PLUS HAUT");
+	ui.log->addItem("Haut");
 }
 
 void TPCamera::buttonBas()
 {
 	//Hexa pour regarder en bas la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 06 01 05 06 03 02 FF");
+	QByteArray data = QByteArray::fromHex("81 01 06 01 08 08 03 02 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("En bas la");
+	ui.log->addItem("Bas");
 
 }
 
 void TPCamera::buttonStop()
 {
 	//Hexa pour stopper toute action de la caméra
-	QByteArray data = QByteArray::fromHex("8x 01 06 01 05 06 03 03 FF");
+	QByteArray data = QByteArray::fromHex("81 01 06 01 05 06 03 03 FF");
 
 	EnvoieTrames(data);
 
@@ -113,60 +113,47 @@ void TPCamera::buttonStop()
 void TPCamera::buttonZoomPlus()
 {
 	//Hexa pour zoomer
-	QByteArray data = QByteArray::fromHex("8x 01 04 08 03 FF");
+	QByteArray data = QByteArray::fromHex("81 01 04 07 02 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Myope");
+	ui.log->addItem("Zoom plus");
 
 }
 
 void TPCamera::buttonZoomMoins()
 {
 	//Hexa pour dézoomer
-	QByteArray data = QByteArray::fromHex("8x 01 04 08 02 FF");
+	QByteArray data = QByteArray::fromHex("81 01 04 07 03 FF");
 
 	EnvoieTrames(data);
 
-	ui.log->addItem("Hypermetrope");
+	ui.log->addItem("Zoom moins");
 
 }
 
 void TPCamera::buttonZoomStop()
 {
 	//Hexa pour stopper zoom
-	QByteArray data = QByteArray::fromHex("8x 01 04 08 00 FF");
+	QByteArray data = QByteArray::fromHex("81 01 04 07 00 FF");
 
 	EnvoieTrames(data);
 
 	ui.log->addItem("Zoom Stop");
 }
 
-
-/*void TPCamera::cameraOn()
+void TPCamera::balayage()
 {
-	ui.haut->setEnabled(true);
-	ui.bas->setEnabled(true);
-	ui.gauche->setEnabled(true);
-	ui.droite->setEnabled(true);
-	ui.stop->setEnabled(true);
-	ui.zoomMoins->setEnabled(true);
-	ui.zoomPlus->setEnabled(true);
-	ui.zoomStop->setEnabled(true);
-	ui.allumer->setEnabled(true);
-	ui.eteindre->setEnabled(true);
+	
 }
 
-void TPCamera::cameraOff()
+void TPCamera::reinitialiser()
 {
-	ui.haut->setEnabled(false);
-	ui.bas->setEnabled(false);
-	ui.gauche->setEnabled(false);
-	ui.droite->setEnabled(false);
-	ui.stop->setEnabled(false);
-	ui.zoomMoins->setEnabled(false);
-	ui.zoomPlus->setEnabled(false);
-	ui.zoomStop->setEnabled(false);
-	ui.allumer->setEnabled(false);
-	ui.eteindre->setEnabled(false);
-}*/
+	// Réinitialiser la position de la caméra
+	QByteArray data = QByteArray::fromHex("81 01 06 02 08 08 0Y 0Y 0Y 0Y 0Z 0Z 0Z 0Z FF");
+
+	EnvoieTrames(data);
+
+	ui.log->addItem("Remise a la position de base de la camera");
+
+}
