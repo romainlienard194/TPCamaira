@@ -1,0 +1,5 @@
+﻿  moc TPCamera.h
+  TPCamera.cpp
+  main.cpp
+  moc_TPCamera.cpp
+  TPCamera.vcxproj -> C:\Users\Formations\source\repos\TPCamera\x64\Debug\TPCamera.exe
